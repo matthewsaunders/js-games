@@ -1,0 +1,14 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { Wordle } from "../../../components/wordle/Wordle";
+import styles from "./styles.module.css";
+---
+
+<Layout title="wordle">
+  <div class={styles.game__container}>
+    <h1>Wordle</h1>
+
+    <!-- <Wordle word="match" client:only /> -->
+    <Wordle client:only />
+  </div>
+</Layout>

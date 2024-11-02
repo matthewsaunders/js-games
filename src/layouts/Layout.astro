@@ -1,0 +1,59 @@
+---
+import styles from "./styles.module.css";
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class={styles.container}>
+      <slot />
+    </div>
+  </body>
+</html>
+<style is:global>
+  @font-face {
+    font-family: "NationalPark";
+    src: url("/fonts/NationalPark-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "NationalPark";
+    src: url("/fonts/NationalPark-Medium.woff2") format("woff2");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "NationalPark";
+    src: url("/fonts/NationalPark-SemiBold.woff2") format("woff2");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "NationalPark";
+    src: url("/fonts/NationalPark-Bold.woff2") format("woff2");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  html {
+    font-family: "NationalPark", sans-serif;
+  }
+</style>

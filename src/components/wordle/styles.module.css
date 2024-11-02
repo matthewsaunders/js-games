@@ -1,0 +1,148 @@
+.wordle {
+  --colors-green: #6eaa67;
+  --colors-yellow: #d7bc52;
+  --colors-black: #1a1a1a;
+  --colors-white: #fff;
+  --colors-dark-grey: #777c7f;
+  --colors-light-grey: #d2d6db; /* keyboard key */
+  --colors-lighter-grey: #d2d7da; /* box border */
+  --colors-blue: #007bff;
+
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 30px;
+}
+
+.board {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-gap: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+
+  width: 100%;
+  max-width: 300px;
+  height: 360px;
+  cursor: default !important;
+  margin-bottom: 4em;
+}
+
+.menu {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.30);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  display: inline-block;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+}
+
+.buttonNewGame {
+  align-self: flex-end;
+  color: var(--colors-dark-grey);
+  background-color: transparent;
+  border: none;
+  max-height: 30px;
+  max-width: 30px;
+  cursor: pointer;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 5px;
+}
+
+.letter {
+  border: 2px solid var(--colors-lighter-grey);
+  height: 48px;
+  width: 48px;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  font-weight: bold;
+  vertical-align: middle;
+  box-sizing: border-box;
+  color: var(--colors-black);
+  text-transform: uppercase;
+}
+.letterFilled {
+  border-color: var(--colors-black);
+}
+.letterSubmitted {
+  background-color: var(--colors-dark-grey);
+  border-color: var(--colors-dark-grey);
+  color: var(--colors-white);
+}
+.letterCorrect {
+  background-color: var(--colors-green);
+  border-color: var(--colors-green);
+}
+.letterOutOfPosition {
+  background-color: var(--colors-yellow);
+  border-color: var(--colors-yellow);
+}
+
+.keyboard {
+  width: 100%;
+}
+.keyboardSpacer {
+  flex: 0.5;
+}
+.keyboardRow {
+  display: flex;
+  width: 100%;
+  margin: 0 auto 8px;
+  touch-action: manipulation;
+}
+
+.key {
+  font-size: 1.25em;
+  font-weight: bold;
+  border: 0;
+  padding: 0;
+  margin: 0 6px 0 0;
+  height: 58px;
+  border-radius: 4px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+.keySpecial {
+  flex: 1.5;
+  font-size: 12px;
+}
+.keySubmitted {
+  background-color: var(--colors-dark-grey);
+  border-color: var(--colors-dark-grey);
+  color: var(--colors-white);
+}
+.keyCorrect {
+  background-color: var(--colors-green);
+  border-color: var(--colors-green);
+}
+.keyOutOfPosition {
+  background-color: var(--colors-yellow);
+  border-color: var(--colors-yellow);
+}
